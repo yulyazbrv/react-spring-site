@@ -1,58 +1,58 @@
-.footer{
-	width: 100%;
-	display: flex;
-	justify-content: center;
+.footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
-.container-footer{
-	max-width: 1140px;
-	width: 100%;
-	margin: 0 10px;
-	padding-top: 20px;
-	padding-bottom: 40px;
-	display: flex;
-	justify-content: space-between;
+.container-footer {
+  max-width: 1140px;
+  width: 100%;
+  margin: 0 10px;
+  padding-top: 20px;
+  padding-bottom: 40px;
+  display: flex;
+  justify-content: space-between;
 }
 
-.container-list{
-	display: flex;
-	width: 50%;
-	justify-content: space-between;
+.container-list {
+  display: flex;
+  width: 50%;
+  justify-content: space-between;
 }
 
-.footer-h2{
-	font-weight: 550;
-    font-size: 115%;
-    transition: 0.3s;
+.footer-h2 {
+  font-weight: 550;
+  font-size: 115%;
+  transition: 0.3s;
 }
 
-.footer-h2:hover{
-	color: #6DB33F;
-	transition: 0.3s;
+.footer-h2:hover {
+  color: #6db33f;
+  transition: 0.3s;
 }
 
-.container-sumbition{
-	display: flex;
-	flex-direction: column;
-	width: 40%;
+.container-sumbition {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
 }
 
-.email{
-	border: 2px solid black;
-	width: 50%;
-	height: 35px;
+.email {
+  border: 2px solid black;
+  width: 50%;
+  height: 35px;
 }
 
-.subscribe{
-	border: 2px solid black;
-	width: 40%;
-	height: 41px;
-	background-color: black;
-	color: white;
+.subscribe {
+  border: 2px solid black;
+  width: 40%;
+  height: 41px;
+  background-color: black;
+  color: white;
 }
 
-.child-input-area{
-	display: flex;
-	flex-direction: row;
-	align-items: flex-start;
+.child-input-area {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
 }
