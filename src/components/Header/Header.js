@@ -6,9 +6,7 @@ import './Header.css';
 
 export const Header = (props) => {
   const { firstMenu, secondMenu, thirdMenu } = props;
-  const [showFirst, setShowFirst] = useState(false);
-  const [showSecond, setShowSecond] = useState(false);
-  const [showThird, setShowThird] = useState(false);
+  const [tabIndex, setTabIndex] = useState(0);
   const [showMobile, setShowMobile] = useState(false);
 
   return (
@@ -47,13 +45,13 @@ export const Header = (props) => {
                           className="arrow-icon"
                           src={arrowDown}
                           onClick={() => {
-                            showFirst ? setShowFirst(false) : setShowFirst(true);
+                            tabIndex === 1 ? setTabIndex(0) : setTabIndex(1);
                           }}
                         />
                       </div>
                     </div>
                     <div className="first-mobile-hidden-menu">
-                      {showFirst
+                      {tabIndex === 1
                         ? firstMenu.map((item) => (
                             <div>
                               <h2>{item.name}</h2>
@@ -68,13 +66,13 @@ export const Header = (props) => {
                           className="arrow-icon"
                           src={arrowDown}
                           onClick={() => {
-                            showSecond ? setShowSecond(false) : setShowSecond(true);
+                            tabIndex === 2 ? setTabIndex(0) : setTabIndex(2);
                           }}
                         />
                       </div>
                     </div>
                     <div className="second-mobile-hidden-menu">
-                      {showSecond
+                      {tabIndex === 2
                         ? secondMenu.map((item) => (
                             <div>
                               <h2>{item.name}</h2>
@@ -89,13 +87,13 @@ export const Header = (props) => {
                           className="arrow-icon"
                           src={arrowDown}
                           onClick={() => {
-                            showThird ? setShowThird(false) : setShowThird(true);
+                            tabIndex === 3 ? setTabIndex(0) : setTabIndex(3);
                           }}
                         />
                       </div>
                     </div>
                     <div className="third-mobile-hidden-menu">
-                      {showThird
+                      {tabIndex === 3
                         ? thirdMenu.map((item) => (
                             <div>
                               <h2>{item.name}</h2>
@@ -120,75 +118,37 @@ export const Header = (props) => {
               </nav>
             ) : null}
             <nav className="nav">
-              <div
-                className="nav-link1"
-                onMouseOver={() => {
-                  setShowFirst(true);
-                }}
-              >
-                Why Spring
-              </div>
-              {showFirst ? (
-                <div
-                  className="hidden-menu1"
-                  id="hidmen1"
-                  onMouseLeave={() => {
-                    setShowFirst(false);
-                  }}
-                >
+              <div className="nav-with-hidden1">
+                <div className="nav-link">Why Spring</div>
+                <div className="hidden-menu" id="hidmen1">
                   {firstMenu.map((item) => (
                     <ul>
                       <li>{item.name}</li>
                     </ul>
                   ))}
                 </div>
-              ) : null}
-              <div
-                className="nav-link2"
-                onMouseOver={() => {
-                  setShowSecond(true);
-                }}
-              >
-                Learn
               </div>
-              {showSecond ? (
-                <div
-                  className="hidden-menu2"
-                  id="hidmen2"
-                  onMouseLeave={() => {
-                    setShowSecond(false);
-                  }}
-                >
+              <div className="nav-with-hidden2">
+                <div className="nav-link">Learn</div>
+                <div className="hidden-menu" id="hidmen2">
                   {secondMenu.map((item) => (
                     <ul>
                       <li>{item.name}</li>
                     </ul>
                   ))}
                 </div>
-              ) : null}
-              <div
-                className="nav-link3"
-                onMouseOver={() => {
-                  setShowThird(true);
-                }}
-              >
-                Projects
               </div>
-              {showThird ? (
-                <div
-                  className="hidden-menu3"
-                  id="hidmen3"
-                  onMouseLeave={() => {
-                    setShowThird(false);
-                  }}
-                >
+              <div className="nav-with-hidden3">
+                <div className="nav-link">Projects</div>
+                <div className="hidden-menu" id="hidmen3">
                   {thirdMenu.map((item) => (
                     <ul>
                       <li>{item.name}</li>
                     </ul>
                   ))}
                 </div>
-              ) : null}
+              </div>
+
               <a className="nav-link" href="#">
                 Training
               </a>
