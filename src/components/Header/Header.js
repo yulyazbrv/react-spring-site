@@ -4,11 +4,11 @@ import menu from '../../images/menu.png';
 import arrowDown from '../../images/arrow-down.png';
 import './Header.css';
 
-export const Header = (props) => {
+const Header = (props) => {
   const { firstMenu, secondMenu, thirdMenu } = props;
   const [tabIndex, setTabIndex] = useState(0);
   const [showMobile, setShowMobile] = useState(false);
-
+  let index = 0;
   return (
     <div>
       <div className="under-intro">
@@ -52,8 +52,8 @@ export const Header = (props) => {
                     </div>
                     <div className="first-mobile-hidden-menu">
                       {tabIndex === 1
-                        ? firstMenu.map((item) => (
-                            <div>
+                        ? firstMenu.map((item, index) => (
+                            <div key={index}>
                               <h2>{item.name}</h2>
                             </div>
                           ))
@@ -73,8 +73,8 @@ export const Header = (props) => {
                     </div>
                     <div className="second-mobile-hidden-menu">
                       {tabIndex === 2
-                        ? secondMenu.map((item) => (
-                            <div>
+                        ? secondMenu.map((item, index) => (
+                            <div key={index}>
                               <h2>{item.name}</h2>
                             </div>
                           ))
@@ -94,8 +94,8 @@ export const Header = (props) => {
                     </div>
                     <div className="third-mobile-hidden-menu">
                       {tabIndex === 3
-                        ? thirdMenu.map((item) => (
-                            <div>
+                        ? thirdMenu.map((item, index) => (
+                            <div key={index}>
                               <h2>{item.name}</h2>
                             </div>
                           ))
@@ -121,8 +121,8 @@ export const Header = (props) => {
               <div className="nav-with-hidden1">
                 <div className="nav-link">Why Spring</div>
                 <div className="hidden-menu" id="hidmen1">
-                  {firstMenu.map((item) => (
-                    <ul>
+                  {firstMenu.map((item, index) => (
+                    <ul key={index}>
                       <li>{item.name}</li>
                     </ul>
                   ))}
@@ -131,8 +131,8 @@ export const Header = (props) => {
               <div className="nav-with-hidden2">
                 <div className="nav-link">Learn</div>
                 <div className="hidden-menu" id="hidmen2">
-                  {secondMenu.map((item) => (
-                    <ul>
+                  {secondMenu.map((item, index) => (
+                    <ul key={index}>
                       <li>{item.name}</li>
                     </ul>
                   ))}
@@ -141,8 +141,8 @@ export const Header = (props) => {
               <div className="nav-with-hidden3">
                 <div className="nav-link">Projects</div>
                 <div className="hidden-menu" id="hidmen3">
-                  {thirdMenu.map((item) => (
-                    <ul>
+                  {thirdMenu.map((item, index) => (
+                    <ul key={index}>
                       <li>{item.name}</li>
                     </ul>
                   ))}
@@ -165,3 +165,5 @@ export const Header = (props) => {
     </div>
   );
 };
+
+export default Header;

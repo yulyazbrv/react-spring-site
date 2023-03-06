@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
-import { Footer } from '../components/Footer/Footer';
-import { Header } from '../components/Header/Header';
-import { Main } from '../components/Main';
+import Footer from '../components/Footer/Footer';
+import Header from '../components/Header/Header';
+import AboutSpring from '../components/AboutSpring/AboutSpring';
+import Projects from '../components/Projects/Projects';
+import AtticProjects from '../components/AtticProjects/AtticProjects';
+import Support from '../components/Support/Support';
 import springBoot from '../images/spring-boot.svg';
 import springFramework from '../images/spring-framework.svg';
 import springData from '../images/spring-data.svg';
@@ -10,6 +13,7 @@ import springDataFlow from '../images/spring-data-flow.svg';
 import springSecurity from '../images/spring-security.svg';
 import springGraphql from '../images/spring-graphql.svg';
 import logoSession from '../images/logo-session.png';
+import './Home.css';
 
 function Home() {
   const projects = [
@@ -83,7 +87,10 @@ function Home() {
   return (
     <div>
       <Header firstMenu={firstMenuItems} secondMenu={secondMenuItems} thirdMenu={thirdMenuItems} />
-      <Main projects={projects} />
+      <AboutSpring />
+      <Projects projects={projects} />
+      <AtticProjects />
+      <Support />
       <Footer />
     </div>
   );

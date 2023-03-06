@@ -1,0 +1,29 @@
+.fourth-intro {
+    width: 100%;
+    background-color: rgba(235, 242, 242, 1);
+    display: flex;
+    justify-content: center;
+}
+  
+.container-fourth {
+    display: block;
+    max-width: 1140px;
+    width: 100%;
+    margin: 0 10px;
+    padding-top: 30px;
+    padding-bottom: 50px;
+}
+  
+.container-gets {
+    display: flex;
+    justify-content: space-between;
+}
+  
+.child-gets {
+    width: 35%;
+}
+  
+.get-news {
+    font-size: 24px;
+    font-weight: 550;
+}
